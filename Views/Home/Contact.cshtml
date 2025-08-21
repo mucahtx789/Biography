@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "İletişim";
+}
+
+<div class="container mt-5">
+    <h1 class="display-5 mb-4">İletişim</h1>
+
+    <div class="row g-4">
+        <!-- Adres ve iletişim bilgileri -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">İletişim Bilgileri</h5>
+
+                    <p class="mb-2">
+                        <i class="bi bi-geo-alt-fill me-2"></i> Kocaeli
+                    </p>
+
+                    <p class="mb-2">
+                        <i class="bi bi-envelope-fill me-2"></i>
+                        <a href="mailto:example@mail.com">example@mail.com</a>
+                    </p>
+
+                    <p class="mb-2">
+                        <i class="bi bi-github me-2"></i>
+                        <a href="https://github.com/mucahtx789" target="_blank">GitHub</a>
+                    </p>
+
+                    <p class="mb-2">
+                        <i class="bi bi-linkedin me-2"></i>
+                        <a href="https://www.linkedin.com/in/mucahtx789" target="_blank">LinkedIn</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- İletişim formu -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Mesaj Gönder</h5>
+
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Ad Soyad</label>
+                            <input id="name" name="name" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-posta</label>
+                            <input id="email" type="email" name="email" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mesaj</label>
+                            <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Gönder</button>
+                        <span id="formOk" class="ms-2 small text-success d-none">Gönderildi! (demo)</span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+        <script>
+            $(function () {
+                $("#contactForm").on("submit", function (e) {
+                    e.preventDefault();
+                    const btn = $(this).find("button[type='submit']");
+                    btn.prop("disabled", true).text("Gönderiliyor...");
+                    setTimeout(() => {
+                        $("#formOk").removeClass("d-none");
+                        btn.prop("disabled", false).text("Gönder");
+                        this.reset();
+                    }, 800);
+                });
+            });
+        </script>
+}
