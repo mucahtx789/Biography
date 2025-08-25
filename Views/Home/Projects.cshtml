@@ -1,14 +1,30 @@
-﻿@model List<(string Name, string Link, string Description)>
+﻿@model List<Biography.Models.ProjectModel>
 @using System.Text.Json
 @{
     ViewData["Title"] = "Projelerim";
 }
 
+
 <div class="container mt-5">
-    <h1 class="display-5 mb-4">Projelerim</h1>
+    <h1 class="display-4 fw-bold">Projelerim</h1>
 
     <!-- React root -->
     <div id="projects-react-root" data-projects='@Html.Raw(JsonSerializer.Serialize(Model))'></div>
+    <h1 class="display-5 mb-4">        🧰 Kullandığım Teknolojiler</h1>
+
+    ASP.NET Core / MVC ,
+    Entity Framework Core ,
+    C# ,
+    Java ,
+    SQL Server ,
+    Vue.js ,
+    HTML / CSS ,
+    Git & GitHub ,
+    React ,
+    JQuery , 
+    Bootstrap ,
+    Javascript
+
 </div>
 
 @section Scripts {
