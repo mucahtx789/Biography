@@ -1,18 +1,24 @@
 ﻿@model BiographyM
 @{
-    ViewData["Title"] = "Biyografi";
+    ViewData["Title"] = "Mücahit Demir";
 }
 
 <div class="container mt-5">
+    
     <!-- Başlık ve Profil -->
     <div class="row align-items-center g-4">
         <div class="col-md-4 text-center">
             <img src="@Model.PhotoUrl" class="img-fluid rounded-circle shadow-lg" alt="Profil Foto" />
         </div>
         <div class="col-md-8">
-            <h1 class="display-4 fw-bold">@Model.FullName</h1>
+            <h1 class="display-4 fw-bold wcontent">@Model.FullName</h1>
             <hr />
-            <p class="lead">@Model.About</p>
+            <p class="lead wcontent">@Model.About</p>
         </div>
     </div>
 </div>
+
+
+
+
+
