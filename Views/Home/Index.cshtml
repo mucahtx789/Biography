@@ -1,24 +1,129 @@
 ﻿@model BiographyM
+@using System.Text.Json
 @{
     ViewData["Title"] = "Mücahit Demir";
 }
 
 <div class="container mt-5">
-    
-    <!-- Başlık ve Profil -->
+    <!-- Profil + İletişim -->
     <div class="row align-items-center g-4">
+        <!-- Profil Foto -->
         <div class="col-md-4 text-center">
             <img src="@Model.PhotoUrl" class="img-fluid rounded-circle shadow-lg" alt="Profil Foto" />
         </div>
+
+        <!-- İletişim Bilgileri -->
         <div class="col-md-8">
-            <h1 class="display-4 fw-bold wcontent">@Model.FullName</h1>
+           
             <hr />
-            <p class="lead wcontent">@Model.About</p>
+            <div class="container mt-4">
+                <div class="row g-4 justify-content-start">
+                    <div class="col-12">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
+                                <p class="mb-2">
+                                    <i class="bi bi-geo-alt-fill me-2"></i> Kocaeli
+                                </p>
+                                <p class="mb-2">
+                                    <i class="bi bi-envelope-fill me-2"></i>
+                                    <a href="mailto:mucahtx789@mail.com">mucahtx789@gmail.com</a>
+                                </p>
+                                <p class="mb-2">
+                                    <i class="bi bi-github me-2"></i>
+                                    <a href="https://github.com/mucahtx789" target="_blank">GitHub</a>
+                                </p>
+                                <p class="mb-2">
+                                    <i class="bi bi-linkedin me-2"></i>
+                                    <a href="https://www.linkedin.com/in/mucahtx789" target="_blank">LinkedIn</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROJELER -->
+    <div class="container mt-5">
+        <h1 class="display-4 fw-bold wcontent">Projelerim</h1>
+
+        <!-- React root -->
+        <div id="projects-react-root" data-projects='@Html.Raw(JsonSerializer.Serialize(ViewBag.Projects))'></div>
+
+        <h1 class="display-5 mb-4 wcontent">🧰 Kullandığım Teknolojiler</h1>
+        <div class="wcontent">
+            ASP.NET Core / MVC ,
+            Entity Framework Core ,
+            C# ,
+            Java ,
+            SQL Server ,
+            Vue.js ,
+            HTML / CSS ,
+            Git & GitHub ,
+            React ,
+            JQuery ,
+            Bootstrap ,
+            Javascript
         </div>
     </div>
 </div>
 
+@section Scripts {
+    <!-- React + ReactDOM CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
+    <!-- React arama ve listeleme -->
+    <script>
+        (function () {
+            const e = React.createElement;
+            const { useState } = React;
 
+            function ProjectCard({ project }) {
+                return e('div', { className: 'col-md-6 col-lg-4 mb-4' },
+                    e('div', { className: 'card h-100 shadow-sm' },
+                        e('div', { className: 'card-body d-flex flex-column' },
+                            e('h5', { className: 'card-title' }, project.Name),
+                            e('p', { className: 'card-text flex-grow-1' }, project.Description),
+                            e('a', { href: project.Link, target: '_blank', className: 'btn btn-primary mt-2' }, "GitHub'da Gör")
+                        )
+                    )
+                );
+            }
 
+            function ProjectBoard({ initial }) {
+                const [search, setSearch] = useState('');
+                const filtered = initial.filter(p => p.Name.toLowerCase().includes(search.toLowerCase()));
 
+                return e('div', null,
+                    e('div', { className: 'mb-3' },
+                        e('input', {
+                            type: 'text',
+                            placeholder: 'Proje ara...',
+                            className: 'form-control',
+                            value: search,
+                            onChange: e => setSearch(e.target.value)
+                        })
+                    ),
+                    e('div', { className: 'row g-4' },
+                        filtered.length > 0
+                            ? filtered.map((p, i) => e(ProjectCard, { key: i, project: p }))
+                            : e('div', { className: 'col-12' },
+                                e('div', { className: 'alert alert-info' }, 'Aradığınız projeye uygun sonuç bulunamadı.')
+                            )
+                    )
+                );
+            }
+
+            const mount = document.getElementById('projects-react-root');
+            if (mount) {
+                const initial = JSON.parse(mount.getAttribute('data-projects'));
+                const root = ReactDOM.createRoot(mount);
+                root.render(e(ProjectBoard, { initial }));
+            }
+        })();
+    </script>
+    }
+
+  

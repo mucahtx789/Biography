@@ -1,4 +1,4 @@
-using System.Diagnostics;
+ï»¿using System.Diagnostics;
 using Biography.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,89 +10,68 @@ namespace Biography.Controllers
         {
             var model = new BiographyM
             {
-                FullName = "Mücahit Demir",
-                PhotoUrl = "images\\profile.jpg",
-                About = "Yazýlým geliþtirici olarak eðitim ve hobilerim hakkýnda kýsa bilgi..."
+                FullName = "MÃ¼cahit Demir",
+                PhotoUrl = "images/profile.jpg",
+                About = "YazÄ±lÄ±m geliÅŸtirici olarak eÄŸitim ve hobilerim hakkÄ±nda kÄ±sa bilgi..."
             };
-            return View(model);
-        }
 
-        public IActionResult Projects()
-        {
             var projects = new List<ProjectModel>
     {
                 new ProjectModel
         {
-            Name = "Anket Uygulamasý",
+            Name = "Anket UygulamasÄ±",
             Link = "https://github.com/mucahtx789/ankett",
-            Description = "Vue.js ile yapýlmýþ anket uygulamasý"
+            Description = "Vue.js ile yapÄ±lmÄ±ÅŸ anket uygulamasÄ±"
         },
                 new ProjectModel
         {
             Name = "Hastane Randevu Sistemi",
             Link = "https://github.com/mucahtx789/Randevu",
-            Description = "Kullanýcýlar için randevu almayý ve yönetmeyi saðlayan uygulama."
+            Description = "KullanÄ±cÄ±lar iÃ§in randevu almayÄ± ve yÃ¶netmeyi saÄŸlayan uygulama."
         },
         new ProjectModel
         {
             Name = "SellPoint",
             Link = "https://github.com/mucahtx789/SellPoint",
-            Description = "Alýþveriþ sitesi projesi"
+            Description = "AlÃ½Ã¾veriÃ¾ sitesi projesi"
         },
         new ProjectModel
         {
             Name = "Cookie Authentication - .NET 6",
             Link = "https://github.com/mucahtx789/ASPNET-MVC-NET6--Cookie-Auth-2",
-            Description = "ASP.NET MVC üzerinde cookie tabanlý oturum yönetimi örneði."
-        },
-        new ProjectModel
-        {
-            Name = "Cookie Authentication - .NET 6",
-            Link = "https://github.com/mucahtx789/ASPNET-MVC-NET6--Cookie-Auth-2",
-            Description = "ASP.NET MVC üzerinde cookie tabanlý oturum yönetimi örneði."
+            Description = "ASP.NET MVC Ã¼zerinde cookie tabanlÄ± oturum yÃ¶netimi Ã¶rneÄŸi."
         },
         new ProjectModel
         {
             Name = "Emlak",
             Link = "https://github.com/mucahtx789/Emlak",
-            Description = "ASP.NET Core ve Entity Framework ile geliþtirilen emlak ilan yönetim sistemi.."
-        }
-        ,
-        new ProjectModel
-        {
-            Name = "Emlak",
-            Link = "https://github.com/mucahtx789/Emlak",
-            Description = "ASP.NET Core ve Entity Framework ile geliþtirilen emlak ilan yönetim sistemi."
-        }
-        ,
+            Description = "ASP.NET Core ve Entity Framework ile geliÅŸtirilen emlak ilan yÃ¶netim sistemi.."
+        },
+        
         new ProjectModel
         {
             Name = "Sosyal Medya",
             Link = "https://github.com/mucahtx789/sosyalMedya",
-            Description = "Kullanýcý, gönderi, yorum ve beðeni özelliklerine sahip bir sosyal medya platformu."
+            Description = "KÃ¼Ã§Ã¼k sosyal medya platformu."
         }
         ,
         new ProjectModel
         {
-            Name = "Görev Takip",
+            Name = "GÃ¶rev Takip",
             Link = "https://github.com/mucahtx789/TaskTracker",
-            Description = "Kullanýcý görev oluþturma ve takip uygulamasý"
+            Description = "KullanÄ±cÄ± gÃ¶rev oluÅŸturna ve takip uygulamasÄ±"
         }
         ,
         new ProjectModel
         {
             Name = "Emlak",
             Link = "https://github.com/mucahtx789/Emlak",
-            Description = "ASP.NET Core ve Entity Framework ile geliþtirilen emlak ilan yönetim sistemi.."
+            Description = "ASP.NET Core ve Entity Framework ile geliÃ¾tirilen emlak ilan yÃ¶netim sistemi.."
         }
     };
 
-            return View(projects);
+            ViewBag.Projects = projects; 
+            return View(model);
         }
-
-        public IActionResult Contact()
-        {
-            return View();
-        } 
     }
 }
