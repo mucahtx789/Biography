@@ -33,7 +33,7 @@ namespace Biography.Controllers
         {
             Name = "SellPoint",
             Link = "https://github.com/mucahtx789/SellPoint",
-            Description = "Alýþveriþ sitesi projesi"
+            Description = "Alışveriş sitesi projesi"
         },
         new ProjectModel
         {
