@@ -1,75 +1,110 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
-}
-body, html {
+/* Genel stil */
+html, body {
     margin: 0;
     padding: 0;
-    height: 200vh; /* scroll efekti için */
-    background: transparent;
-    color: #fff;
-    font-family: monospace;
-}
-.content h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #0ff;
-    text-shadow: 0 0 8px #0ff, 0 0 16px #0cc;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background: #000;
+    color: #fff; /* Tüm metinler beyaz */
+
 }
 
-/* Açýklama */
-.content p {
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(6px);
-    border-radius: 12px;
-    display: inline-block;
-    padding: 40px 60px;
+/* Baþlýklar */
+h1, h2, h3, h4, h5 {
+    color: #fff;
 }
+
+/* Linkler */
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #00bcd4; /* Hover için mavi */
+    }
+
+/* Card */
+.card {
+    background: rgba(20,20,20,0.85);
+    border: 1px solid #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #fff; /* Kart içi yazýlar beyaz */
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 20px rgba(124,77,255,0.5), 0 0 40px rgba(0,188,212,0.3);
+    }
+
+/* Profil çerçevesi */
+.profile-frame {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #00bcd4;
+    box-shadow: 0 0 15px rgba(0,188,212,0.6), 0 0 30px rgba(124,77,255,0.4);
+    animation: pulseFrame 2.5s ease-in-out infinite alternate;
+}
+
+    .profile-frame img {
+       
+        border-radius: 50%;
+    }
+
+@keyframes pulseFrame {
+    0% {
+        box-shadow: 0 0 15px rgba(0,188,212,0.5), 0 0 25px rgba(124,77,255,0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 25px rgba(0,188,212,0.8), 0 0 50px rgba(124,77,255,0.6);
+    }
+
+    100% {
+        box-shadow: 0 0 15px rgba(0,188,212,0.5), 0 0 25px rgba(124,77,255,0.3);
+    }
+}
+
+/* React container ve içerik */
+#projects-react-root, .wcontent, #projects-react-root * {
+    color: #fff !important; /* React yazýlar ve çocuklarý beyaz */
+}
+
+/* Arka plan animasyonu */
 #background {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
     overflow: hidden;
-    z-index: -1;
     background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
 }
 
-.code-line {
-    position: absolute;
-    color: #0ff;
-    font-size: 14px;
-    white-space: nowrap;
-    opacity: 0.3;
-    will-change: transform, opacity;
+/* React input arama kutusu */
+#projects-react-root input {
+    background: rgba(20,20,20,0.85);
+    border: 1px solid #333;
+    color: #fff;
 }
 
-.content {
-    position: relative;
-    z-index: 1;
-    padding: 100px;
+/* Header */
+.site-header {
+    text-align: center;
+    padding: 2rem 0;
+    background: #111;
+    color: #fff;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #222;
 }
-.wcontent{
-   color:azure; 
+.wcontent {
+    position: relative;
+    z-index: 1; /* Arka planýn üstünde */
 }

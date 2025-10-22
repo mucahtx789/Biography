@@ -8,15 +8,18 @@
     <!-- Profil + İletişim -->
     <div class="row align-items-center g-4">
         <!-- Profil Foto -->
-        <div class="col-md-4 text-center">
+        <div class="profile-frame">
             <img src="@Model.PhotoUrl" class="img-fluid rounded-circle shadow-lg" alt="Profil Foto" />
+
         </div>
 
         <!-- İletişim Bilgileri -->
         <div class="col-md-8">
            
-            <hr />
+           
             <div class="container mt-4">
+                <h1 class="display-4 fw-bold wcontent">Mücahit Demir </h1>
+                <hr />
                 <div class="row g-4 justify-content-start">
                     <div class="col-12">
                         <div class="card shadow-sm h-100">
@@ -46,8 +49,9 @@
 
     <!-- PROJELER -->
     <div class="container mt-5">
+        
         <h1 class="display-4 fw-bold wcontent">Projelerim</h1>
-
+        
         <!-- React root -->
         <div id="projects-react-root" data-projects='@Html.Raw(JsonSerializer.Serialize(ViewBag.Projects))'></div>
 

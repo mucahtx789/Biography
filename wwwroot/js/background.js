@@ -1,46 +1,50 @@
-﻿const numLines = 60;
-const bg = document.getElementById('background');
-const codeSnippets = [
-    'console.log("Hello World");',
-    'const x = 42;',
-    'function greet(name) { return `Hello ${name}`; }',
-    'let arr = [1,2,3,4];',
-    'document.querySelector("h1").innerText = "Hi!";',
-    'async function fetchData() { await fetch("/api"); }'
-];
+﻿// Canvas oluştur ve background divine ekle
+const canvas = document.createElement('canvas');
+canvas.id = 'matrix';
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+document.getElementById('background').appendChild(canvas);
 
-const lines = [];
+const ctx = canvas.getContext('2d');
 
-// Kod satırlarını oluştur
-for (let i = 0; i < numLines; i++) {
-    const line = document.createElement('div');
-    line.classList.add('code-line');
-    line.textContent = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
-    line.style.top = `${Math.random() * 100}%`;
-    line.style.left = `${Math.random() * 100}%`;
-    line.style.fontSize = `${12 + Math.random() * 8}px`;
-    bg.appendChild(line);
-    lines.push(line);
+let columns = 0;
+const ypos = [];
+const fontSize = 18; // yazı boyutu
+
+// Canvas boyutunu ayarlayan fonksiyon
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    columns = Math.floor(canvas.width / fontSize);
+    ypos.length = columns;
+
+    // Her sütunu üstten başlat
+    for (let i = 0; i < columns; i++) {
+        ypos[i] = 0;
+    }
 }
 
-// Web Animations API ile yukarı-aşağı hareket
-lines.forEach(line => {
-    line.animate([
-        { transform: `translateY(0px)`, opacity: 0.3 },
-        { transform: `translateY(-200px)`, opacity: 0.8 }
-    ], {
-        duration: 20000 + Math.random() * 10000,
-        iterations: Infinity,
-        direction: 'alternate',
-        easing: 'ease-in-out'
-    });
-});
+// Matrix animasyonu
+function matrix() {
+    // Sayfayı biraz karart (trail efekti)
+    ctx.fillStyle = 'rgba(0,0,0,0.15)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-// Scroll-linked effect: satırlar x ekseninde kayar
-document.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    lines.forEach((line, i) => {
-        const offsetX = (scrollY * 0.3 * ((i % 5) + 1)) % window.innerWidth;
-        line.style.transform = `translateX(${offsetX}px)`;
+    ctx.fillStyle = '#00bcd4';
+    ctx.font = fontSize + 'px monospace';
+
+    ypos.forEach((y, index) => {
+        const text = String.fromCharCode(33 + Math.random() * 94);
+        ctx.fillText(text, index * fontSize, y);
+
+        // Eğer ekranın altına geldiyse başa döndür
+        ypos[index] = y > canvas.height ? 0 : y + fontSize;
     });
-});
+}
+
+// Başlat
+resizeCanvas();
+setInterval(matrix, 50);
+
+// Pencere boyutu değişirse canvas'ı yeniden ayarla
+window.addEventListener('resize', resizeCanvas);
