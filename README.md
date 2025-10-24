@@ -6,20 +6,23 @@ Arka planda Matrix tarzı animasyon ve sayfa kaydırma sırasında yumuşak geç
 
 🚀 Özellikler
 
-Tek sayfa (one-page) tasarım
+React tabanlı tek sayfa (SPA) yapı
 
-Canvas ile Matrix arka plan animasyonu
+Canvas / JavaScript ile Matrix arka plan animasyonu
 
-Scroll ile fade-in geçiş efektleri
+Scroll animasyonları (fade-in, slide-up)
 
-Responsive (mobil uyumlu) yapı
+Responsive ve koyu temalı modern tasarım
 
-🛠️ Kullanılan Teknolojiler
+🧠 Kullanılan Teknolojiler
 
-HTML5, CSS3, JavaScript (Vanilla)
+React (JSX, Component yapısı)
 
-Canvas API (arka plan animasyonu için)
+HTML5 / CSS3 / JavaScript (Vanilla)
 
+Canvas API – arka plan efekti için
+
+React Hooks – state ve efekt yönetimi için
 📁 Dosyalar
 
 index.html → Ana sayfa
