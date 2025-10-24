@@ -23,6 +23,7 @@ HTML5 / CSS3 / JavaScript (Vanilla)
 Canvas API – arka plan efekti için
 
 React Hooks – state ve efekt yönetimi için
+
 📁 Dosyalar
 
 index.html → Ana sayfa
