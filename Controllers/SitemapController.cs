@@ -16,11 +16,20 @@ namespace Biography.Controllers
 
             // URL seti
             var urlset = new XElement(ns + "urlset",
+                // Ana sayfa
                 new XElement(ns + "url",
                     new XElement(ns + "loc", "http://mucahitd.com.tr/"),
                     new XElement(ns + "lastmod", DateTime.UtcNow.ToString("yyyy-MM-dd")),
                     new XElement(ns + "changefreq", "daily"),
                     new XElement(ns + "priority", "1.0")
+                ),
+                
+                // Privacy sayfası
+                new XElement(ns + "url",
+                    new XElement(ns + "loc", "http://mucahitd.com.tr/Privacy"),
+                    new XElement(ns + "lastmod", DateTime.UtcNow.ToString("yyyy-MM-dd")),
+                    new XElement(ns + "changefreq", "monthly"),
+                    new XElement(ns + "priority", "0.5")
                 )
             );
 
