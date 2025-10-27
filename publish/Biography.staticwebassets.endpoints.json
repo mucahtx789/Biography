@@ -249,6 +249,170 @@
       ]
     },
     {
+      "Route": "images/favicon.0gdz0xvv2g.png",
+      "AssetFile": "images/favicon.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5125"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0AIXonq3/PVOqrkIX0rh1W947rhEa3s6UpPkPthO+84=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 Oct 2025 15:44:48 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0gdz0xvv2g"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0AIXonq3/PVOqrkIX0rh1W947rhEa3s6UpPkPthO+84="
+        },
+        {
+          "Name": "label",
+          "Value": "images/favicon.png"
+        }
+      ]
+    },
+    {
+      "Route": "images/favicon.ico",
+      "AssetFile": "images/favicon.ico",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9662"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KBoo3TdjMlRZ3LulZsQCy8LmMt0phvI9abeF8AV07dY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 Oct 2025 15:49:03 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-KBoo3TdjMlRZ3LulZsQCy8LmMt0phvI9abeF8AV07dY="
+        }
+      ]
+    },
+    {
+      "Route": "images/favicon.k9tgmvbzu2.ico",
+      "AssetFile": "images/favicon.ico",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9662"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KBoo3TdjMlRZ3LulZsQCy8LmMt0phvI9abeF8AV07dY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 Oct 2025 15:49:03 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k9tgmvbzu2"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-KBoo3TdjMlRZ3LulZsQCy8LmMt0phvI9abeF8AV07dY="
+        },
+        {
+          "Name": "label",
+          "Value": "images/favicon.ico"
+        }
+      ]
+    },
+    {
+      "Route": "images/favicon.png",
+      "AssetFile": "images/favicon.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5125"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0AIXonq3/PVOqrkIX0rh1W947rhEa3s6UpPkPthO+84=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 Oct 2025 15:44:48 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0AIXonq3/PVOqrkIX0rh1W947rhEa3s6UpPkPthO+84="
+        }
+      ]
+    },
+    {
       "Route": "images/profile.7rm15zyd1w.jpg",
       "AssetFile": "images/profile.jpg",
       "Selectors": [],
