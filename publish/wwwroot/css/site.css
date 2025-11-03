@@ -128,3 +128,96 @@ footer {
     border-top: 1px solid #222;
     margin-top: 5rem;
 }
+
+/* Scrollbar  */
+::-webkit-scrollbar {
+    width: 10px; 
+    height: 10px; 
+}
+
+/* Scroll arka planý */
+::-webkit-scrollbar-track {
+    background: #e0f7fa; /* açýk turkuaz */
+    border-radius: 10px;
+}
+
+/* Scroll*/
+::-webkit-scrollbar-thumb {
+    background-color: #00bcd4; /* turkuaz */
+    border-radius: 10px;
+    border: 2px solid #e0f7fa;
+}
+
+ 
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #0097a7; /* biraz daha koyu turkuaz */
+    }
+/* ---  ÝMLEÇ  --- */
+body {
+    cursor: url('/images/cursor.png') 8 8, auto;
+}
+
+
+a,
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+label[for],
+.cursor-pointer,
+.clickable,
+[data-clickable="true"],
+div[onclick],
+span[onclick] {
+    cursor: url('/images/finger.png') 8 8, pointer !important;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input:not([type]),
+textarea,
+[contenteditable="true"] {
+    cursor: url('/images/type.png') 8 8, text !important;
+}
+
+
+*::selection {
+    cursor: url('/images/type.png') 8 8, text !important;
+}
+
+
+input:placeholder-shown,
+textarea:placeholder-shown {
+    cursor: url('/images/type.png') 8 8, text !important;
+}
+
+
+p,
+span,
+li,
+h1, h2, h3, h4, h5, h6,
+label,
+strong,
+em,
+b,
+i {
+    cursor: url('/images/type.png') 8 8, text;
+}
+
+
+
+/* Footer genel cursor */
+footer, footer * {
+    cursor: url('/images/cursor.png') 8 8, auto !important;
+}
+
+
+    footer a,
+    footer a:hover,
+    footer a:focus {
+        cursor: url('/images/finger.png') 8 8, pointer !important;
+    }
