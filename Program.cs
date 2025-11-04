@@ -6,6 +6,8 @@ using System.Globalization;
 using System.Net;
 using System.Text.Json;
 using Microsoft.AspNetCore.HttpOverrides;
+using WebMarkupMin.AspNetCore8;
+using WebMarkupMin.Core;
 
 namespace Biography
 {
@@ -38,6 +40,22 @@ namespace Biography
                 options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
             });
 
+            // WebMarkupMin servisleri Minify
+            builder.Services.AddWebMarkupMin()
+                .AddHtmlMinification(options =>
+                {
+                    options.MinificationSettings.RemoveRedundantAttributes = true;
+                    options.MinificationSettings.RemoveHttpProtocolFromAttributes = true;
+                    options.MinificationSettings.RemoveHttpsProtocolFromAttributes = true;
+                    options.MinificationSettings.MinifyEmbeddedCssCode = true;
+                    options.MinificationSettings.MinifyEmbeddedJsCode = true;
+                    options.MinificationSettings.RemoveHtmlComments = true;
+                    options.MinificationSettings.RemoveOptionalEndTags = true;
+                    options.MinificationSettings.WhitespaceMinificationMode = WhitespaceMinificationMode.Aggressive;
+                })
+                .AddHttpCompression();
+
+
             var app = builder.Build();
 
             // Proxy IP bilgilerini aktif et
@@ -49,6 +67,9 @@ namespace Biography
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
+
+            // Minify 
+            app.UseWebMarkupMin();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
