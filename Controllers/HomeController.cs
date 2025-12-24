@@ -19,6 +19,12 @@ namespace Biography.Controllers
     {
                 new ProjectModel
         {
+            Name = "SilentWingstr site",
+            Link = "https://www.silentwingstr.com",
+            Description = "Drone ve Teknoloji hakkında  yapmış olduğum site"
+        },
+                new ProjectModel
+        {
             Name = "Anket Uygulaması",
             Link = "https://github.com/mucahtx789/ankett",
             Description = "Vue.js ile yapılmış anket uygulaması"
