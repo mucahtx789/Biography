@@ -41,6 +41,20 @@ namespace Biography.Controllers
             Link = "https://github.com/mucahtx789/SellPoint",
             Description = "Alışveriş sitesi projesi"
         },
+          new ProjectModel
+        {
+            Name = "Mobil oyun menüsü",
+            Link = "https://github.com/mucahtx789/flutter_game_starter",
+            Description = "Bu proje, Flutter ile geliştirilecek mobil oyunlar için modüler, ölçeklenebilir ve performans odaklı bir temel (boilerplate) yapısıdır."
+        }
+        ,
+           new ProjectModel
+        {
+            Name = "Mobil resim uygulması",
+            Link = "https://github.com/mucahtx789/mobil_resim_app",
+            Description = "Bu proje, Flutter framework'ü kullanılarak geliştirilmi, instagramdan resim indirme ve düzenleme uygulaması"
+        }
+        ,
         new ProjectModel
         {
             Name = "Cookie Authentication - .NET 6",
@@ -67,13 +81,8 @@ namespace Biography.Controllers
             Link = "https://github.com/mucahtx789/TaskTracker",
             Description = "Kullanıcı görev oluşturna ve takip uygulaması"
         }
-        ,
-        new ProjectModel
-        {
-            Name = "Emlak",
-            Link = "https://github.com/mucahtx789/Emlak",
-            Description = "ASP.NET Core ve Entity Framework ile geliþtirilen emlak ilan yönetim sistemi.."
-        }
+        
+       
     };
 
             ViewBag.Projects = projects; 
